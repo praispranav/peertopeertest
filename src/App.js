@@ -108,7 +108,7 @@ class App extends Component {
     }
 
     // https://developer.mozilla.org/en-US/docs/Web/API/MediaDevices/getUserMedia
-    navigator.mediaDevices.getUserMedia(constraints)
+    window.navigator.mediaDevices.getUserMedia(constraints)
       .then(success)
       .catch(failure)
   }
