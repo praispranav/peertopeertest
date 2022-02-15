@@ -76,7 +76,7 @@ class App extends Component {
     }
 
     // triggered when a stream is added to pc, see below - this.pc.addStream(stream)
-    this.pc.onaddstream = (e) => {
+    this.pc.ontracks = (e) => {
       this.remoteVideoref.current.srcObject = e.stream
     }
 
@@ -85,7 +85,7 @@ class App extends Component {
     const success = (stream) => {
       window.localStream = stream
       this.localVideoref.current.srcObject = stream
-      this.pc.addStream(stream)
+      this.pc.addTrack(stream)
     }
 
     // called when getUserMedia() fails - see below
